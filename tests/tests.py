@@ -209,7 +209,6 @@ def test_register_password(browser, password_data):
     reg_pass.enter_pass(password_data[5])
     reg_pass.click_register_button()
     assert reg_pass.error_text_password() == "Длина пароля должна быть не менее 8 символов"
-    time.sleep(5)
 
 
 # Тест поля "email(номер телефона)" при регистрации, почта не содержит часть ...@mail.ru/@yandex.ru
@@ -247,8 +246,7 @@ def test_yandex_social_med(browser):
     soc_ya = SearchHelper(browser)
     soc_ya.go_to_site()
     soc_ya.yandex_email_social_med()
-    time.sleep(5)
-    # WebDriverWait(browser,10).until(EC.element_to_be_clickable(soc_ya.user_name_for_lk()))
+    soc_ya.wait_vis()
     soc_ya.button_exit()
     assert soc_ya.main_url_lk() == "https://b2c.passport.rt.ru/account_b2c/page?state=39865372-26c6-4de5-8a52-164876235fcb&client_id=account_b2c&theme=light#/"
 

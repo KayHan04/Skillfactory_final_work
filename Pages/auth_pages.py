@@ -173,7 +173,7 @@ class SearchHelper(BasePage):
 
     # Текст ошибки при вводе в поле "пароль"
     def error_text_password(self):
-        error_text = self.find_element(Yasearchlocators.LOCATOR_ROSTELEKOM_SEARCH_ERROR_TEXT_PASSWORD)
+        error_text = self.find_element(Yasearchlocators.LOCATOR_ROSTELEKOM_SEARCH_ERROR_TEXT_PASSWORD).text
         return error_text
 
     # Текст ошибки при вводе поля "Email или телефон"
@@ -206,3 +206,6 @@ class SearchHelper(BasePage):
         mrc = self.find_element(Yasearchlocators.LOCATOR_ROSTELEKOM_SEARCH_MAIL_SOCIAL).click()
         return mrc
 
+    # def wait_vis(self):
+    #     wv = self.wait_visability(Yasearchlocators.LOCATOR_ROSTELEKOM_SEARCH_USERNAME_MAIN_LK)
+    #     return wv

@@ -22,4 +22,5 @@ class BasePage:
     def go_to_main_url_lk(self):
         return self.driver.get(self.url_lk)
 
-
+    # def wait_visability(self,locator,time=10):
+    #     return WebDriverWait(self.driver,time).until(EC.visibility_of_element_located(locator))
