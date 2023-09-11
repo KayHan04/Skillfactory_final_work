@@ -114,7 +114,7 @@ def test_register_name_numbers(browser, first_name_data):
 
 
 #  Тест на принятие кириллицы поля "имя", с использованием 31 сивола (кирилица)
-def test_register_name_numbers(browser, first_name_data):
+def test_register_name_numbers_1(browser, first_name_data):
     reg_name = SearchHelper(browser)
     reg_name.go_to_site()
     reg_name.click_on_button_register_first_str()
@@ -124,7 +124,7 @@ def test_register_name_numbers(browser, first_name_data):
 
 
 #  Тест на принятие кириллицы поля "имя", с использованием 1 сивола (кирилица)
-def test_register_name_numbers(browser, first_name_data):
+def test_register_name_number_2(browser, first_name_data):
     reg_name = SearchHelper(browser)
     reg_name.go_to_site()
     reg_name.click_on_button_register_first_str()
@@ -152,7 +152,7 @@ def test_register_last_name_cyr(browser, last_name_data):
 
 
 # Тест поля "фамилия" при регистрации, используя англ. символы
-def test_register_name_numbers(browser, last_name_data):
+def test_register_name_numbers_3(browser, last_name_data):
     reg_name = SearchHelper(browser)
     reg_name.go_to_site()
     reg_name.click_on_button_register_first_str()
@@ -162,7 +162,7 @@ def test_register_name_numbers(browser, last_name_data):
 
 
 # Тест поля "фамилия" при регистрации, используя цифры
-def test_register_name_numbers(browser, last_name_data):
+def test_register_name_numbers_4(browser, last_name_data):
     reg_name = SearchHelper(browser)
     reg_name.go_to_site()
     reg_name.click_on_button_register_first_str()
@@ -192,7 +192,7 @@ def test_register_name_cyr_1_sybl(browser, last_name_data):
 
 
 # Тест поля "Пароль" при регистрации, используя 7 цифр
-def test_register_password(browser, password_data):
+def test_register_password_1(browser, password_data):
     reg_pass = SearchHelper(browser)
     reg_pass.go_to_site()
     reg_pass.click_on_button_register_first_str()
@@ -202,7 +202,7 @@ def test_register_password(browser, password_data):
 
 
 # !!!!!!!Тест поля "Пароль" при регистрации, используя 7 цифр и одну заглавную букву A
-def test_register_password(browser, password_data):
+def test_register_password_2(browser, password_data):
     reg_pass = SearchHelper(browser)
     reg_pass.go_to_site()
     reg_pass.click_on_button_register_first_str()
