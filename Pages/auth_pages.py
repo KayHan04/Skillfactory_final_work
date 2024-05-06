@@ -40,8 +40,9 @@ class Yasearchlocators:
     LOCATOR_ROSTELEKOM_SEARCH_VK_SOCIAL = (By.XPATH, "//a[@id='oidc_vk']")
     LOCATOR_ROSTELEKOM_SEARCH_SCHOOL_SOCIAL = (By.XPATH, "//a[@id='oidc_ok']")
     LOCATOR_ROSTELEKOM_SEARCH_MAIL_SOCIAL = (By.XPATH, "//a[@id='oidc_mail']")
-
     LOCATOR_ROSTELEKOM_SEARCH_USERNAME_MAIN_LK = (By.XPATH, "//body/div[@id='app']/main[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h2[1]")
+    LOCATOR_ROSTELEKOM_HELP = (By.XPATH, '//*[@id="faq-open"]/a[1]')
+    LOCATOR_ROSTELEKOM_USER_AGGREMENT = (By.XPATH, '//*[@id="rt-auth-agreement-link"]')
 
 class SearchHelper(BasePage):
 
@@ -99,7 +100,8 @@ class SearchHelper(BasePage):
     def value_first_name(self):
         value = self.find_element(Yasearchlocators.LOCATOR_ROSTELEKOM_SEARCH_VALUE_FISRT_NAME_AT_REGISTER).text
         return value
-
+    
+    # Значение вводимое в поле фамилия
     def value_last_name(self):
         value = self.find_element(Yasearchlocators.LOCATOR_ROSTELEKOM_SEARCH_VALUE_LAST_NAME_AT_REGISTER).text
         return value
@@ -205,7 +207,15 @@ class SearchHelper(BasePage):
     def click_mail_ru(self):
         mrc = self.find_element(Yasearchlocators.LOCATOR_ROSTELEKOM_SEARCH_MAIL_SOCIAL).click()
         return mrc
+    # Клик по кнопке "Помощь" на главной странице
+    def click_button_help(self):
+        cbh = self.find_element(Yasearchlocators.LOCATOR_ROSTELEKOM_HELP).click()
+        return cbh
+    # Явное ожидание майл.ру (уже сделал через слип)
+    def wait_vis(self):
+        wv = self.wait_visability(Yasearchlocators.LOCATOR_ROSTELEKOM_SEARCH_USERNAME_MAIN_LK)
+        return wv
 
-    # def wait_vis(self):
-    #     wv = self.wait_visability(Yasearchlocators.LOCATOR_ROSTELEKOM_SEARCH_USERNAME_MAIN_LK)
-    #     return wv
+    def click_button_user_aggrement(self):
+        cbua = self.find_element(Yasearchlocators.LOCATOR_ROSTELEKOM_USER_AGGREMENT).click()
+        return cbua

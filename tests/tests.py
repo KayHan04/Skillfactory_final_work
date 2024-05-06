@@ -248,7 +248,8 @@ def test_yandex_social_med(browser):
     soc_ya.yandex_email_social_med()
     soc_ya.wait_vis()
     soc_ya.button_exit()
-    assert soc_ya.main_url_lk() == "https://b2c.passport.rt.ru/account_b2c/page?state=39865372-26c6-4de5-8a52-164876235fcb&client_id=account_b2c&theme=light#/"
+    assert soc_ya.main_url_lk() == ("https://b2c.passport.rt.ru/account_b2c/page?"
+                                    "state=39865372-26c6-4de5-8a52-164876235fcb&client_id=account_b2c&theme=light#/")
 
 
 # Тест кликабельности социальных сетей
@@ -265,3 +266,19 @@ def test_social_meds(browser):
     s_med.yandex_email_social_med()
     browser.back()
     assert s_med.base_url == "https://b2c.passport.rt.ru/auth"
+
+#  Тест кликабельности кнопки "Помощь"
+def test_help_button(browser):
+    help_but = SearchHelper(browser)
+    help_but.go_to_site()
+    help_but.click_button_help()
+    assert help_but.url_help == ("https://b2c.passport.rt.ru/auth/realms/b2c/protocol/openid-connect/auth?client_id=account_b2c&redirect_uri=https:"
+                                 "//b2c.passport.rt.ru/account_b2c/login&response_"
+                                 "type=code&scope=openid&state=bedbc671-8f26-4e47-9a18-f0672f67384b&theme&auth_type")
+
+# Тест кликабельности кнопки "пользовательское соглашение"
+def test_users_aggremnt(browser):
+    user_ag = SearchHelper(browser)
+    user_ag.go_to_site()
+    user_ag.click_button_user_aggrement()
+    assert user_ag.url_use_aggrement == "https://b2c.passport.rt.ru/sso-static/agreement/agreement.html"
