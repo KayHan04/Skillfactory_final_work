@@ -14,7 +14,8 @@ def test_enter_lk_with_valid_data(browser, email_data, password_data):
     enter_lk.enter_pass(password_data[0])
     enter_lk.click_on_search_button_enter()
     enter_lk.button_exit()
-    assert enter_lk.main_url_lk() == "https://b2c.passport.rt.ru/account_b2c/page?state=39865372-26c6-4de5-8a52-164876235fcb&client_id=account_b2c&theme=light#/"
+    assert enter_lk.main_url_lk() == ("https://b2c.passport.rt.ru/account_b2c/"
+                                      "page?state=39865372-26c6-4de5-8a52-164876235fcb&client_id=account_b2c&theme=light#/")
 
 
 # Тест входа в личный кабинет через неверные данные почты
@@ -280,5 +281,6 @@ def test_help_button(browser):
 def test_users_aggremnt(browser):
     user_ag = SearchHelper(browser)
     user_ag.go_to_site()
+    browser.delete_all_cookies()
     user_ag.click_button_user_aggrement()
     assert user_ag.url_use_aggrement == "https://b2c.passport.rt.ru/sso-static/agreement/agreement.html"
