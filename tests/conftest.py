@@ -21,7 +21,7 @@ def email_data():
 
 @pytest.fixture(scope='session')
 def password_data():
-    valid_pass = 'uchebaK12'
+    valid_pass = 'uchebaK'
     sec_pass = 'uch123'
     th_pass = 'unitA322'
     fou_pass = '1234ht'
